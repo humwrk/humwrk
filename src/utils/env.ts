@@ -6,7 +6,7 @@ dotenv.config()
 export const NODE_ENV = process.env.NODE_ENV! || 'development'
 export const HOST = process.env.HOST! || 'localhost'
 // eslint-disable-next-line radix
-export const PORT = Number.parseInt(process.env.HUMANTIC_PORT!) || 3600
+export const PORT = Number.parseInt(process.env.PORT!) || 3600
 
 // Auth0 Configuration
 export const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN!
