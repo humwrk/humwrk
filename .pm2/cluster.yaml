@@ -1,0 +1,3 @@
+apps:
+ - name: application
+   script: dist/main.bundle.js

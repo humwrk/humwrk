@@ -1,0 +1,1 @@
+web: pm2-runtime .pm2/cluster.yaml
