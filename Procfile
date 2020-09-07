@@ -1,1 +1,1 @@
-web: pm2-runtime .pm2/cluster.yaml
+web: node dist/main.bundle.js
