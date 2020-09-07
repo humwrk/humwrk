@@ -11,7 +11,7 @@ services:
   build:
    context: .
    dockerfile: Dockerfile
-  image: humantic/api
+  image: humwrk/api:dev
   ports:
    - 3600:3600
 
