@@ -1,0 +1,20 @@
+{
+	"name": "@araclx/noddy",
+	"version": "1.0.0",
+	"description": "No-code repository considered as a bare template for TypeScript applications, which includes code-related things such as linters, documentation, and other shit that you setup in every new repository. ",
+	"main": "index.js",
+	"repository": "https://github.com/ARACLX/noddy.git",
+	"author": "Jakub Olan <jakub.olan001@gmail.com>",
+	"license": "MIT",
+	"private": true,
+	"devDependencies": {
+		"@araclx/husky-config": "^0.0.12",
+		"@araclx/prettier-config": "^0.0.11",
+		"@araclx/semantic-release": "^0.1.6-alpha.0",
+		"@araclx/xo-config": "^0.0.1-alpha.0",
+		"husky": "^4.2.5",
+		"prettier": "^2.0.5",
+		"semantic-release": "^17.1.1",
+		"xo": "^0.32.1"
+	}
+}

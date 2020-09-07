@@ -1,0 +1,29 @@
+version: 2.1
+
+orbs:
+ node: circleci/node@3.0.1
+
+executors:
+ node:
+  docker:
+   - image: cimg/node:lts
+
+jobs:
+ install:
+  working_directory: ~/noddy
+  executor: node
+  steps:
+   - checkout
+   - node/install:
+      install-yarn: true
+      node-version: lts
+   - run: node --version
+   - run: yarn --version
+   - node/install-packages:
+      app-dir: ~/noddy
+      pkg-manager: yarn
+
+workflows:
+ install:
+  jobs:
+   - install
