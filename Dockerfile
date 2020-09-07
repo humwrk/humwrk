@@ -29,7 +29,7 @@ ENV NODE_ENV 'production'
 RUN yarn global add pm2
 
 # Install Application Dependencies
-COPY package.json .
+COPY package.json yarn.lock ./
 RUN yarn install
 
 # Copy source of application
