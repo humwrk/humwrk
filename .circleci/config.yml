@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
  node: circleci/node@4.0.0
+ docker: circleci/docker@1.4.0
 
 executors:
  node:
@@ -21,3 +22,8 @@ jobs:
       app-dir: ~/humwrk
       pkg-manager: yarn
    - run: yarn build
+   - docker/build:
+      path: ~/humwrk
+      dockerfile: Dockerfile
+      image: humwrk
+      tag: dev
