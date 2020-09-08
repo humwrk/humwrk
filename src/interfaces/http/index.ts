@@ -1,61 +1,68 @@
-import cfonts from 'cfonts'
+import express from 'express'
+
 import compression from 'compression'
 import cors from 'cors'
 import errorhandler from 'errorhandler'
-import express from 'express'
-import getport from 'get-port'
 import morgan from 'morgan'
+
+import cfonts from 'cfonts'
+import getport from 'get-port'
 import signale from 'signale'
-import { HOST, isDevelopment, NODE_ENV, PORT } from '../../utils/env'
 
-export class InterfaceHTTP {
-	public core: express.Application
+import * as Sentry from '@sentry/node'
+import * as Tracing from '@sentry/tracing'
 
-	constructor() {
-		this.core = express()
-		this.middleware()
-		this.errorHandling()
-		this.routing()
-		this.services()
-	}
+import { HOST, isDevelopment, NODE_ENV, PORT, SENTRY_DSN } from '../../utils/env'
 
-	public async listen() {
-		const appPORT = await getport({
-			port: PORT,
+const app: express.Application = express()
+
+Sentry.init({
+	dsn: SENTRY_DSN,
+	integrations: [
+		// enable HTTP calls tracing
+		new Sentry.Integrations.Http({ tracing: true }),
+		// enable Express.js middleware tracing
+		new Tracing.Integrations.Express({ app }),
+	],
+	tracesSampleRate: 1.0,
+})
+
+// RequestHandler creates a separate execution context using domains, so that every
+// transaction/span/breadcrumb is attached to its own Hub instance
+app.use(Sentry.Handlers.requestHandler())
+// TracingHandler creates a trace for every incoming request
+app.use(Sentry.Handlers.tracingHandler())
+
+app.disable('x-powered-by')
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
+app.use(cors())
+app.use(compression())
+if (isDevelopment) app.use(morgan('dev'))
+
+app.get('/', function rootHandler(req, res) {
+	res.end('Hello world!')
+})
+
+app.use(Sentry.Handlers.errorHandler())
+
+app.use(function onError(err, req, res, next) {
+	// The error id is attached to `res.sentry` to be returned
+	// and optionally displayed to the user for support.
+	res.statusCode = 500
+	res.end(res.sentry + '\n')
+})
+
+export async function listen() {
+	const automatedPORT = await getport({
+		port: PORT,
+	})
+
+	app.listen(automatedPORT, () => {
+		cfonts.say('Humwrk', {
+			font: 'block',
+			align: 'left',
 		})
-		this.core.listen(appPORT, () => {
-			cfonts.say('Humwrk', {
-				font: 'block',
-				align: 'left',
-			})
-			signale.success(`(${NODE_ENV}) listening on http://${HOST}:${appPORT}`)
-		})
-	}
-
-	/** Configuration of middleware attached to Express Server. */
-	private middleware() {
-		this.core.disable('x-powered-by')
-		this.core.use(express.json())
-		this.core.use(express.urlencoded({ extended: false }))
-		this.core.use(cors())
-		this.core.use(compression())
-		if (isDevelopment) this.core.use(morgan('dev'))
-	}
-
-	/** Private Method dedicated for configuring routing of application. */
-	private routing() {}
-
-	/** Error Handling Method, dedicated for services like Sentry. */
-	private errorHandling() {
-		if (isDevelopment)
-			this.core.use(
-				errorhandler({
-					log: true,
-				})
-			)
-	}
-
-	/** Private method dedicated for running 3rd-party services that are
-	 * required to run server. */
-	private async services() {}
+		signale.success(`(${NODE_ENV}) listening on http://${HOST}:${automatedPORT}`)
+	})
 }

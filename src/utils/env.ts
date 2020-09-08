@@ -8,6 +8,9 @@ export const HOST = process.env.HOST! || 'localhost'
 // eslint-disable-next-line radix
 export const PORT = Number.parseInt(process.env.PORT!) || 3600
 
+// Sentry Configuration
+export const SENTRY_DSN = process.env.SENTRY_DSN!
+
 // Auth0 Configuration
 export const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN!
 export const AUTH0_AUDIENCE = process.env.AUTH0_AUDIENCE!
