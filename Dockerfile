@@ -29,7 +29,7 @@ ENV NODE_ENV 'production'
 RUN yarn global add pm2
 
 # Install Application Dependencies
-COPY package.json yarn.lock ./
+COPY package.json ./
 RUN yarn install
 
 # Copy source of application
@@ -44,4 +44,4 @@ USER node
 # Application Entrypoint
 EXPOSE 3600/tcp
 
-CMD [ "pm2-runtime", ".pm2/cluster.yaml" ]
+CMD [ "node", "dist/main.bundle.js" ]
