@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+ mongodb:
+  container_name: humantic-mongodb
+  image: mongo
+  ports:
+   - 27017:27017

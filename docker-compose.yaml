@@ -7,7 +7,7 @@ services:
    - 80:80
 
  api:
-  container_name: humantic-api
+  container_name: humwrk
   build:
    context: .
    dockerfile: Dockerfile
@@ -16,7 +16,13 @@ services:
    - 3600:3600
 
  mongodb:
-  container_name: humantic-mongodb
+  container_name: humwrk-mongodb
   image: mongo
   ports:
    - 27017:27017
+
+ minio:
+  container_name: humwrk-minio
+  image: minio/minio:edge
+  ports:
+   - 9000:9000
