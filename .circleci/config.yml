@@ -14,7 +14,6 @@ jobs:
   working_directory: ~/humwrk
   executor: node
   steps:
-   - setup_remote_docker
    - checkout
    - node/install-yarn
    - run: node --version
@@ -23,8 +22,3 @@ jobs:
       app-dir: ~/humwrk
       pkg-manager: yarn
    - run: yarn build
-   - docker/build:
-      path: ~/humwrk
-      dockerfile: Dockerfile
-      image: humwrk
-      tag: dev
