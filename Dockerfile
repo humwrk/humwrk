@@ -18,6 +18,7 @@ HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD curl 
 
 # Installation of node_modules
 WORKDIR /opt/humwrk
+USER root
 COPY package.json yarn.lock* ./
 RUN yarn
 ENV PATH /opt/humwrk/node_modules/.bin:$PATH
@@ -30,4 +31,5 @@ RUN yarn build
 # Exposed application ports
 EXPOSE 3600/tcp
 
+USER node
 CMD [ "node", "dist/main.bundle.js" ]
