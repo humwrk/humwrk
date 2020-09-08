@@ -4,7 +4,7 @@
 # VENDOR          Araclx Inc.
 # MAINTAINER      Jakub Olan <jakub.olan001@gmail.com>
 
-FROM node:alpine
+FROM node:latest
 
 # Container Metadata
 LABEL com.araclx.vendor "Araclx Inc."
@@ -13,32 +13,21 @@ LABEL com.araclx.product "Humantic"
 LABEL com.araclx.subsystem "system"
 LABEL com.araclx.version "0.0.1"
 
-# Working Directory of container
-WORKDIR /usr/src/humantic
-
 # Healthchecking to monitor application status
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD curl -v http://localhost:3600/ping || exit 1
 
-# Container User with root permissions
-USER root
-
-# Container DotENV Configuration
-ENV NODE_ENV 'production'
-
-# Install Application Dependencies
-COPY package.json .
+# Installation of node_modules
+WORKDIR /opt/humwrk
+COPY package.json yarn.lock* ./
 RUN yarn
+ENV PATH /opt/humwrk/node_modules/.bin:$PATH
 
-# Copy source of application
+# Operations on application source
+WORKDIR /opt/humwrk/src
 COPY . .
-
-# Build files
 RUN yarn build
 
-# Use non-root user for process
-USER node
-
-# Application Entrypoint
+# Exposed application ports
 EXPOSE 3600/tcp
 
 CMD [ "node", "dist/main.bundle.js" ]
