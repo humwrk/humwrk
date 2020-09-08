@@ -25,9 +25,6 @@ USER root
 # Container DotENV Configuration
 ENV NODE_ENV 'production'
 
-# Global installation of pm2
-RUN yarn global add pm2
-
 # Install Application Dependencies
 COPY package.json .
 RUN yarn
