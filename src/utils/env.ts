@@ -1,4 +1,5 @@
 import dotenv from 'dotenv'
+import * as pkg from '../../package.json'
 import { isDevelopmentCheck } from './env-helper'
 
 dotenv.config()
@@ -7,6 +8,9 @@ export const NODE_ENV = process.env.NODE_ENV! || 'development'
 export const HOST = process.env.HOST! || 'localhost'
 // eslint-disable-next-line radix
 export const PORT = Number.parseInt(process.env.PORT!) || 3600
+
+// Package Metadata
+export const PKG_VERSION = pkg.version
 
 // Sentry Configuration
 export const SENTRY_DSN = process.env.SENTRY_DSN!

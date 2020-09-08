@@ -12,12 +12,14 @@ import signale from 'signale'
 import * as Sentry from '@sentry/node'
 import * as Tracing from '@sentry/tracing'
 
-import { HOST, isDevelopment, NODE_ENV, PORT, SENTRY_DSN } from '../../utils/env'
+import { HOST, isDevelopment, NODE_ENV, PKG_VERSION, PORT, SENTRY_DSN } from '../../utils/env'
 
 const app: express.Application = express()
 
 Sentry.init({
 	dsn: SENTRY_DSN,
+	// Read more about version configuration here: https://docs.sentry.io/product/releases/
+	release: `humwrk@${PKG_VERSION}`,
 	integrations: [
 		// enable HTTP calls tracing
 		new Sentry.Integrations.Http({ tracing: true }),
