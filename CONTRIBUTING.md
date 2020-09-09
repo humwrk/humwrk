@@ -1,7 +1,6 @@
 # Contributing
 
-When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other
-method with the owners of this repository before making a change.
+When contributing to this repository, please first discuss the change you wish to make on our [Slack Workspace](https://join.slack.com/t/humwrk/shared_invite/zt-h6f16liq-rLvCUbMx~UW_GTAztZBmMQ) with person associated to Humwrk or Araclx.
 
 Please note we have a code of conduct, please follow it in all your interactions with the project.
 
