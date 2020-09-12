@@ -1,3 +1,3 @@
-import { listen } from './interfaces/http'
+import { listen } from 'gateway/index'
 
 listen()

@@ -12,7 +12,7 @@ import signale from 'signale'
 import * as Sentry from '@sentry/node'
 import * as Tracing from '@sentry/tracing'
 
-import { HOST, isDevelopment, NODE_ENV, PKG_VERSION, PORT, SENTRY_DSN } from '../../utils/env'
+import { HOST, isDevelopment, NODE_ENV, PKG_VERSION, PORT, SENTRY_DSN } from 'utils/env'
 
 const app: express.Application = express()
 
@@ -68,3 +68,4 @@ export async function listen() {
 		signale.success(`(${NODE_ENV}) listening on http://${HOST}:${automatedPORT}`)
 	})
 }
+
