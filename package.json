@@ -9,7 +9,7 @@
 	"private": true,
 	"scripts": {
 		"build": "webpack",
-		"start": "ts-node-dev src/container.ts"
+		"start": "pm2-runtime .pm2/dev.yaml"
 	},
 	"devDependencies": {
 		"@araclx/husky-config": "^0.0.12",
@@ -36,7 +36,9 @@
 		"craftpack": "^0.0.16",
 		"eslint-plugin-prettier": "^3.1.4",
 		"husky": "^4.2.5",
+		"nodemon-webpack-plugin": "^4.3.2",
 		"prettier": "^2.0.5",
+		"scripty": "^2.0.0",
 		"semantic-release": "^17.1.1",
 		"ts-node": "^9.0.0",
 		"ts-node-dev": "^1.0.0-pre.62",
@@ -47,6 +49,7 @@
 	"dependencies": {
 		"@sentry/node": "^5.22.3",
 		"@sentry/tracing": "^5.22.3",
+		"@typegoose/typegoose": "^7.3.5",
 		"cfonts": "^2.8.6",
 		"compression": "^1.7.4",
 		"cors": "^2.8.5",
@@ -60,6 +63,7 @@
 		"morgan": "^1.10.0",
 		"pm2": "^4.4.1",
 		"signale": "^1.4.0",
-		"spdy": "^4.0.2"
+		"spdy": "^4.0.2",
+		"uuid": "^8.3.0"
 	}
 }

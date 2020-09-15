@@ -1,0 +1,12 @@
+apps:
+ - name: gateway
+   script: src/gateway/service.ts
+   interpreter: ts-node-dev
+   watch: true
+ - name: gateway
+   script: src/projects/service.ts
+   interpreter: ts-node-dev
+   watch: true
+ - name: gateway
+   script: src/utilities/monitor.ts
+   interpreter: ts-node-dev

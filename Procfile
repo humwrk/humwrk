@@ -1,1 +1,1 @@
-web: node dist/main.bundle.js
+web: pm2 start .pm2/dev.yaml

@@ -1,3 +1,6 @@
+# TODO: Production-ready configuration
 apps:
- - name: application
-   script: dist/main.bundle.js
+ - name: gateway
+   script: dist/gateway.bundle.js
+ - name: gateway
+   script: dist/projects.bundle.js
