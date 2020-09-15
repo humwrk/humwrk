@@ -9,6 +9,7 @@
 	"private": true,
 	"scripts": {
 		"build": "webpack",
+		"test:lint": "xo",
 		"start": "pm2-runtime .pm2/dev.yaml"
 	},
 	"devDependencies": {

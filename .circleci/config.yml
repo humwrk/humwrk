@@ -21,4 +21,5 @@ jobs:
    - node/install-packages:
       app-dir: ~/humwrk
       pkg-manager: yarn
+   - run: yarn test:lint
    - run: yarn build
