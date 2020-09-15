@@ -1,87 +1,79 @@
-// import express from 'express'
+import express from 'express'
+import cote from 'cote'
+import compression from 'compression'
+import cors from 'cors'
+import errorhandler from 'errorhandler'
+import morgan from 'morgan'
 
-import { Requester } from 'cote'
+import cfonts from 'cfonts'
+import getport from 'get-port'
+import signale from 'signale'
 
-// import compression from 'compression'
-// import cors from 'cors'
-// import errorhandler from 'errorhandler'
-// import morgan from 'morgan'
+import * as Sentry from '@sentry/node'
+import * as Tracing from '@sentry/tracing'
 
-// import cfonts from 'cfonts'
-// import getport from 'get-port'
-// import signale from 'signale'
+import { HOST, isDevelopment, NODE_ENV, PKG_VERSION, PORT, SENTRY_DSN } from '../utilities/env'
 
-// import * as Sentry from '@sentry/node'
-// import * as Tracing from '@sentry/tracing'
+const app: express.Application = express()
 
-// import { HOST, isDevelopment, NODE_ENV, PKG_VERSION, PORT, SENTRY_DSN } from '../utilities/env'
+Sentry.init({
+	dsn: SENTRY_DSN,
+	// Read more about version configuration here: https://docs.sentry.io/product/releases/
+	release: `humwrk@${PKG_VERSION}`,
+	integrations: [
+		// enable HTTP calls tracing
+		new Sentry.Integrations.Http({ tracing: true }),
+		// enable Express.js middleware tracing
+		new Tracing.Integrations.Express({ app }),
+	],
+	tracesSampleRate: 1.0,
+})
 
-// const app: express.Application = express()
+app.use(Sentry.Handlers.requestHandler())
+app.use(Sentry.Handlers.tracingHandler())
 
-// Sentry.init({
-// 	dsn: SENTRY_DSN,
-// 	// Read more about version configuration here: https://docs.sentry.io/product/releases/
-// 	release: `humwrk@${PKG_VERSION}`,
-// 	integrations: [
-// 		// enable HTTP calls tracing
-// 		new Sentry.Integrations.Http({ tracing: true }),
-// 		// enable Express.js middleware tracing
-// 		new Tracing.Integrations.Express({ app }),
-// 	],
-// 	tracesSampleRate: 1.0,
-// })
+app.disable('x-powered-by')
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
+app.use(cors())
+app.use(compression())
+if (isDevelopment) app.use(morgan('dev'))
 
-// app.use(Sentry.Handlers.requestHandler())
-// app.use(Sentry.Handlers.tracingHandler())
+app.get('/', (req, res) => {
+	// res.json('Humwrk v0.0.1-alpha.0')
+	const projectRequester = new cote.Requester({
+		name: 'ProjectRequester',
+		namespace: 'project',
+	})
+	projectRequester.send(
+		{
+			type: 'hello',
+		},
+		function (e, data) {
+			res.send(data)
+		}
+	)
+})
 
-// app.disable('x-powered-by')
-// app.use(express.json())
-// app.use(express.urlencoded({ extended: false }))
-// app.use(cors())
-// app.use(compression())
-// if (isDevelopment) app.use(morgan('dev'))
+app.use(Sentry.Handlers.errorHandler())
 
-// app.get('/', (req, res) => {
-// 	res.json('Humwrk v0.0.1-alpha.0')
-// })
+app.use(function onError(err, req, res, next) {
+	res.statusCode = 500
+	res.end(res.sentry + '\n')
+})
 
-// app.use(Sentry.Handlers.errorHandler())
+async function listen() {
+	const automatedPORT = await getport({
+		port: PORT,
+	})
 
-// app.use(function onError(err, req, res, next) {
-// 	res.statusCode = 500
-// 	res.end(res.sentry + '\n')
-// })
-
-// async function listen() {
-// 	const automatedPORT = await getport({
-// 		port: PORT,
-// 	})
-
-// 	app.listen(automatedPORT, () => {
-// 		cfonts.say('Humwrk', {
-// 			font: 'block',
-// 			align: 'left',
-// 		})
-// 		signale.success(`(${NODE_ENV}) listening on http://${HOST}:${automatedPORT}`)
-// 	})
-// }
-
-// listen()
-
-const requester = new Requester({ name: 'project requester' })
-requester.send(
-	{
-		type: 'hello',
-	},
-	(e, res) => {
-		console.log(res)
-	}
-)
-
-async function makeres() {
-	await requester.send({
-		type: 'hello',
+	app.listen(automatedPORT, () => {
+		cfonts.say('Humwrk', {
+			font: 'block',
+			align: 'left',
+		})
+		signale.success(`(${NODE_ENV}) listening on http://${HOST}:${automatedPORT}`)
 	})
 }
 
-makeres()
+listen()
