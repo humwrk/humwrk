@@ -1,1 +1,0 @@
-web: pm2 start .pm2/dev.yaml
