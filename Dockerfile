@@ -32,4 +32,4 @@ RUN yarn build
 EXPOSE 3600/tcp
 
 USER node
-CMD [ "node", "dist/main.bundle.js" ]
+CMD [ "yarn", "start" ]
