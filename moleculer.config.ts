@@ -9,10 +9,8 @@ import { BrokerOptions, Errors, MetricRegistry, ServiceBroker } from 'moleculer'
  */
 
 const brokerConfig: BrokerOptions = {
-	// Namespace of nodes to segment your nodes on the same network.
-	namespace: '',
-	// Unique node identifier. Must be unique in a namespace.
-	nodeID: null,
+	namespace: 'project',
+	nodeID: 'server1',
 	// Custom metadata store. Store here what you want. Accessing: `this.broker.metadata`
 	metadata: {},
 
@@ -26,20 +24,17 @@ const brokerConfig: BrokerOptions = {
 			// Print module names with different colors (like docker-compose for containers)
 			moduleColors: false,
 			// Line formatter. It can be "json", "short", "simple", "full", a `Function` or a template string like "{timestamp} {level} {nodeID}/{mod}: {msg}"
-			formatter: 'full',
+			formatter: 'short',
 			// Custom object printer. If not defined, it uses the `util.inspect` method.
 			objectPrinter: null,
 			// Auto-padding the module name in order to messages begin at the same column.
 			autoPadding: false,
 		},
 	},
-	// Default log level for built-in console logger. It can be overwritten in logger options above.
 	// Available values: trace, debug, info, warn, error, fatal
 	logLevel: 'info',
 
-	// Define transporter.
 	// More info: https://moleculer.services/docs/0.14/networking.html
-	// Note: During the development, you don't need to define it because all services will be loaded locally.
 	// In production you can set it via `TRANSPORTER=nats://localhost:4222` environment variable.
 	transporter: null, //"NATS"
 
@@ -52,22 +47,15 @@ const brokerConfig: BrokerOptions = {
 	// More info: https://moleculer.services/docs/0.14/networking.html#Serialization
 	serializer: 'JSON',
 
-	// Number of milliseconds to wait before reject a request with a RequestTimeout error. Disabled: 0
 	requestTimeout: 10 * 1000,
 
-	// Retry policy settings. More info: https://moleculer.services/docs/0.14/fault-tolerance.html#Retry
+	// More info: https://moleculer.services/docs/0.14/fault-tolerance.html#Retry
 	retryPolicy: {
-		// Enable feature
-		enabled: false,
-		// Count of retries
+		enabled: true,
 		retries: 5,
-		// First delay in milliseconds.
 		delay: 100,
-		// Maximum delay in milliseconds.
 		maxDelay: 1000,
-		// Backoff factor for delay. 2 means exponential backoff.
 		factor: 2,
-		// A function to check failed requests.
 		check: (err: Errors.MoleculerError) => err && !!err.retryable,
 	},
 
