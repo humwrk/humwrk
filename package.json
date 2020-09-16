@@ -19,6 +19,9 @@
 	],
 	"author": "",
 	"devDependencies": {
+		"@types/ioredis": "^4.17.4",
+		"@types/mongoose": "^5.7.36",
+		"@types/redlock": "^4.0.1",
 		"jest": "^25.1.0",
 		"jest-cli": "^25.1.0",
 		"moleculer-repl": "^0.6.2",
