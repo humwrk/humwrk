@@ -9,6 +9,7 @@
 	"gitVersionPrefix": "v",
 	"command": {
 		"publish": {
+			"useGitVersion": false,
 			"ignoreChanges": ["ignored-file", "*.md"],
 			"message": "chore(release): publish",
 			"registry": "https://npm.pkg.github.com/"
