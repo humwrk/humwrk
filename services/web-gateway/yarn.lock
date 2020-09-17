@@ -7,6 +7,11 @@
   resolved "https://registry.yarnpkg.com/@araclx/tsconfig/-/tsconfig-0.0.11.tgz#b7dde8c7fddcd3a930faa769246cf741c9255f44"
   integrity sha512-NHSgfgThVxN7hFDS/pljirqvmmjdiCPSGBy1udKDIHq9d9YCSXctfQVIBEab1hDjrY7/FloOz9eEoHi/fQa89w==
 
+"@types/node@^14.10.3":
+  version "14.10.3"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.10.3.tgz#5ae1f119c96643fc9b19b2d1a83bfa2ec3dbb7ea"
+  integrity sha512-zdN0hor7TLkjAdKTnYW+Y22oIhUUpil5ZD1V1OFq0CR0CLKw+NdR6dkziTfkWRLo6sKzisayoj/GNpNbe4LY9Q==
+
 "@types/strip-bom@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/strip-bom/-/strip-bom-3.0.0.tgz#14a8ec3956c2e81edb7520790aecf21c290aebd2"
