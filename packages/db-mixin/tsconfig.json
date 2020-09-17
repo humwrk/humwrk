@@ -1,0 +1,11 @@
+{
+	"extends": "@araclx/tsconfig",
+	"compilerOptions": {
+		"target": "ES2018",
+		"lib": ["ES2018"],
+		"baseUrl": ".",
+		"module": "amd",
+		"outFile": "dist/db.mixin.js"
+	},
+	"include": ["./src/*.ts"]
+}
