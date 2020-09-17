@@ -4,13 +4,20 @@ Humwrk is little (maybe bigger) product that will be released by Araclx, Inc. (c
 company because Human Resources and building products related to Human Resources isn't main target of Araclx for this moment. This product will maintained to
 the end because that's not only a freelance platform like in first concept but complete platform for human resources at worldwide scale.
 
+## Usage
+
+This package is currently dedicated for In-Cloud version of Humwrk, which will targeted for individual users and companies, in future (planned 3.x version)
+we'll introduce self-hosted version of Humwrk called AraclxDirectory which will be solution for manging human resources arround company and doing HR in
+siplified way integrating Humwrk into AraclxDirectory. Our product naming may be unclear actually but we're working on documentation that will resolve all
+common questions, actually questions can be made out on [Slack](https://join.slack.com/t/humwrk/shared_invite/zt-h6f16liq-rLvCUbMx~UW_GTAztZBmMQ).
+
 ## Development
 
 Project currently is in early stage and scripts may be not up to date since there we're chaning a lot of things, but in general according to our plans for this
 repository you need 4 things.
 
 -  Prefferable **yarn**, but **npm** is also fine - that makes no difference to our solution.
--  **Skaffold** to handle CI/CD Pipeline
+-  **[Skaffold](https://skaffold.dev/)** to handle CI/CD Pipeline
 -  **Docker** for containers of course
 -  **kubectl** for kubernetes obivo
 
