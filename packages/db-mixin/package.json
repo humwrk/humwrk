@@ -4,6 +4,11 @@
 	"description": "Minix dedicated for MongoDB.",
 	"main": "dist/db.mixin",
 	"author": "Jakub Olan <jakub.jay.olan@gmail.com>",
+	"repository": {
+		"type": "git",
+		"url": "ssh://git@github.com/humwrk/humwrk.git",
+		"directory": "packages/db-mixin"
+	},
 	"license": "MIT",
 	"files": [
 		"dist"
@@ -22,5 +27,8 @@
 		"moleculer-db": "^0.8.9",
 		"moleculer-db-adapter-mongo": "^0.4.9",
 		"moleculer-db-adapter-mongoose": "^0.8.7"
+	},
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com/"
 	}
 }
