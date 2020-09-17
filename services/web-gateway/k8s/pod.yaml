@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: web-gateway
+  name: web-gateway
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-gateway
+  template:
+    metadata:
+      labels:
+        app: web-gateway
+    spec:
+      containers:
+        - name: web-gateway
+          image: web-gateway-service
+          env:
+            - name: PORT
+              value: "80"
+            - name: REQUESTS_PER_MINUTE
+              value: "100"
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 40m
+            limits:
+              cpu: 70m
+      restartPolicy: Always
