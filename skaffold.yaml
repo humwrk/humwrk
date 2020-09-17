@@ -1,0 +1,10 @@
+apiVersion: skaffold/v2alpha4
+kind: Config
+metadata:
+  name: humwrk-services
+build:
+  artifacts:
+    - image: humwrk/projects
+      context: services/projects
+      docker:
+        dockerfile: docker/Dockerfile
