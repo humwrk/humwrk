@@ -1,0 +1,25 @@
+{
+	"$schema": "http://json.schemastore.org/lerna",
+	"packages": ["packages/*"],
+	"version": "independent",
+	"granularPathspec": false,
+	"npmClient": "yarn",
+	"useGitVersion": false,
+	"useWorkspaces": false,
+	"gitVersionPrefix": "v",
+	"command": {
+		"publish": {
+			"useGitVersion": false,
+			"ignoreChanges": ["ignored-file", "*.md"],
+			"message": "chore(release): publish",
+			"registry": "https://npm.pkg.github.com/"
+		},
+		"bootstrap": {
+			"npmClientArgs": ["--no-package-lock"]
+		},
+		"version": {
+			"message": "chore(release): publish",
+			"conventionalCommits": true
+		}
+	}
+}

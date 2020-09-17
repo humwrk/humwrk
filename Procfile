@@ -1,1 +1,0 @@
-web: node dist/main.bundle.js
