@@ -4,7 +4,11 @@ metadata:
   name: humwrk-services
 build:
   artifacts:
-    - image: humwrk/projects
-      context: services/projects
+    # - image: humwrk/projects
+    #   context: services/projects
+    #   docker:
+    #     dockerfile: docker/Dockerfile
+    - image: humwrk/web-gateway
+      context: services/web-gateway
       docker:
-        dockerfile: docker/Dockerfile
+        dockerfile: docker/dev.Dockerfile
