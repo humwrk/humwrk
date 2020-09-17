@@ -1,0 +1,9 @@
+{
+  "name": "@humwrk/project-service",
+  "version": "0.0.1",
+  "description": "Project service for handling all events related to creating, updating and removing projects at our platform.",
+  "main": "index.js",
+  "author": "Jakub Olan <jakub.jay.olan@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
