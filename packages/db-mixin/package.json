@@ -1,6 +1,6 @@
 {
 	"name": "@humwrk/db-mixin",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Minix dedicated for MongoDB.",
 	"main": "dist/db.mixin",
 	"author": "Jakub Olan <jakub.jay.olan@gmail.com>",

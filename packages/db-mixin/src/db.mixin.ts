@@ -4,7 +4,6 @@ import { existsSync } from 'fs'
 import { sync } from 'mkdirp'
 import { Context, Service, ServiceSchema } from 'moleculer'
 import DbService from 'moleculer-db'
-import { MONGODB_URI } from '../../../utils/envfile'
 
 class Connection implements Partial<ServiceSchema>, ThisType<Service> {
 	private cacheCleanEventName: string
@@ -54,11 +53,11 @@ class Connection implements Partial<ServiceSchema>, ThisType<Service> {
 		this.cacheCleanEventName = `cache.clean.${this.collection}`
 	}
 	public start() {
-		if (MONGODB_URI) {
+		if (process.env.MONGODB_URI) {
 			// Mongo adapter
 			const MongoAdapter = require('moleculer-db-adapter-mongo')
 
-			this.schema.adapter = new MongoAdapter(MONGODB_URI)
+			this.schema.adapter = new MongoAdapter(process.env.MONGODB_URI)
 			this.schema.collection = this.collection
 		} else if (process.env.TEST) {
 			// NeDB memory adapter for testing
