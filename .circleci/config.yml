@@ -20,4 +20,5 @@ jobs:
          - node/install-packages:
               app-dir: ~/humwrk
               pkg-manager: yarn
+              override-ci-command: yarn --immutable
          - run: yarn build
