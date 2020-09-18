@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: web-gateway
-          image: web-gateway-service
+          image: humwrk/web-gateway
           env:
             - name: PORT
               value: "80"
