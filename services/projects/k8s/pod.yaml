@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: projects
+  name: projects
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: projects
+  template:
+    metadata:
+      labels:
+        app: projects
+    spec:
+      containers:
+        - name: projects
+          image: humwrk/projects
+          env:
+            - name: PORT
+              value: "80"
+            - name: MONGO_URI
+              value: mongodb://cards-mongo-mongodb.default.svc.cluster.local:27017
+          resources:
+            requests:
+              cpu: 40m
+            limits:
+              cpu: 70m
+      restartPolicy: Always

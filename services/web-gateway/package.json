@@ -2,14 +2,13 @@
 	"name": "@humwrk/web-gateway",
 	"version": "0.0.1",
 	"description": "Web gateway to access internal services at our infrastructure.",
-	"main": "index.js",
+	"main": "dist/index.js",
 	"author": "Jakub Olan <jakub.jay.olan@gmail.com>",
 	"license": "MIT",
-	"private": false,
 	"scripts": {
 		"build": "tsc",
 		"dev": "tsnd --respawn --clear --transpile-only --inspect -- src/index.ts",
-		"start": "node ./dist/index.js"
+		"start": "node dist/index.js"
 	},
 	"dependencies": {
 		"compression": "^1.7.4",

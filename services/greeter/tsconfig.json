@@ -4,7 +4,8 @@
 		"target": "ES2018",
 		"lib": ["ES2018"],
 		"baseUrl": ".",
-		"module": "commonjs",
-		"outDir": "dist"
-	}
+		"module": "amd",
+		"outFile": "dist/db.mixin.js"
+	},
+	"include": ["./src/*.ts"]
 }

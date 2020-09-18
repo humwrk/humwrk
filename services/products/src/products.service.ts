@@ -1,7 +1,7 @@
 'use strict'
 import { Context, Service, ServiceBroker } from 'moleculer'
 
-import DbConnection from '../../packages/db-mixin/src/db.mixin'
+import DbConnection from './db.mixin'
 
 export default class ProductsService extends Service {
 	private DbMixin = new DbConnection('products').start()

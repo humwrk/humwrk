@@ -1,0 +1,13 @@
+{
+  "name": "@humwrk/greeter",
+  "version": "0.0.1",
+  "description": "Sample service that returns hello world.",
+  "main": "dist/index.js",
+  "author": "Jakub Olan <jakub.olan001@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@araclx/tsconfig": "^0.0.11",
+    "typescript": "^4.0.2"
+  }
+}
