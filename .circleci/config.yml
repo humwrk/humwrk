@@ -15,7 +15,6 @@ jobs:
       executor: node
       steps:
          - checkout
-         - node/install-yarn
          - run: node --version
          - run: yarn --version
          - node/install-packages:
