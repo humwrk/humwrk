@@ -1,6 +1,6 @@
 {
 	"name": "@humwrk/products",
-	"version": "1.0.0",
+	"version": "0.0.1",
 	"description": "Sample service that represents connection with database.",
 	"main": "dist/index.ts",
 	"author": "Jakub Olan <jakub.olan001@gmail.com>",
@@ -17,6 +17,7 @@
 		"moleculer": "^0.14.10",
 		"moleculer-db": "^0.8.9",
 		"moleculer-db-adapter-mongo": "^0.4.9",
-		"moleculer-db-adapter-mongoose": "^0.8.7"
+		"moleculer-db-adapter-mongoose": "^0.8.7",
+		"mongoose": "^5.10.6"
 	}
 }
