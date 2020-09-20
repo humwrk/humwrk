@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: greeter
+  name: greeter
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: greeter
+  template:
+    metadata:
+      labels:
+        app: greeter
+    spec:
+      containers:
+        - name: greeter
+          image: humwrk/greeter
+          env:
+            - name: PORT
+              value: "80"
+          resources:
+            requests:
+              cpu: 40m
+            limits:
+              cpu: 70m
+      restartPolicy: Always
