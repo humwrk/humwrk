@@ -30,7 +30,7 @@ $ git clone https://github.com/humwrk/humwrk.git
 And then you can simplify run development environment designed by us in single command.
 
 ```bash
-$ yarn run dev
+$ skaffold dev
 ```
 
 If you really don't want to use `skaffold` for development, you can use local enviroment but that's strongly not recommended since we're not willing to support
