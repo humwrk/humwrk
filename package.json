@@ -7,7 +7,6 @@
 		"services/**"
 	],
 	"scripts": {
-		"build": "tsc --build tsconfig.json",
 		"dev": "skaffold dev",
 		"dev:local": "ts-node ./node_modules/moleculer/bin/moleculer-runner.js --hot --repl --config config/moleculer.config.ts services/**/*.service.ts",
 		"start": "moleculer-runner",
