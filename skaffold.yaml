@@ -12,9 +12,14 @@ build:
       context: services/web-gateway
       docker:
         dockerfile: docker/dev.Dockerfile
+    - image: humwrk/greeter
+      context: services/greeter
+      docker:
+        dockerfile: docker/dev.Dockerfile
 deploy:
   kubectl:
     manifests:
       # - services/projects/k8s/pod.yaml
       - services/web-gateway/k8s/pod.yaml
       - services/web-gateway/k8s/svc.yaml
+      - services/greeter/k8s/pod.yaml
