@@ -17,6 +17,7 @@ __metadata:
   resolution: "@humwrk/greeter@workspace:."
   dependencies:
     "@araclx/tsconfig": ^0.0.11
+    "@types/node": ^14.11.1
     moleculer: ^0.14.10
     nats: ^1.4.12
     ts-node: ^9.0.0
@@ -24,6 +25,13 @@ __metadata:
     typescript: ^4.0.2
   languageName: unknown
   linkType: soft
+
+"@types/node@npm:^14.11.1":
+  version: 14.11.1
+  resolution: "@types/node@npm:14.11.1"
+  checksum: f8bad278fcd5bdd3c173343967806a5601838570ee89ef96912909489df6d722ef7f4de08a31d98159293ef0005bd65353199327c65af77505d3aad2a05fd636
+  languageName: node
+  linkType: hard
 
 "@types/strip-bom@npm:^3.0.0":
   version: 3.0.0
