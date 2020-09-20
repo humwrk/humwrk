@@ -473,6 +473,7 @@ __metadata:
     moleculer-db: ^0.8.9
     moleculer-db-adapter-mongo: ^0.4.9
     moleculer-db-adapter-mongoose: ^0.8.7
+    mongoose: ^5.10.6
     typescript: ^4.0.2
   languageName: unknown
   linkType: soft
