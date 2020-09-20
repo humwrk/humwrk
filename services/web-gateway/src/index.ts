@@ -1,5 +1,5 @@
 import { ServiceBroker } from 'moleculer'
-import Service from './api.service'
+import Service from './gateway.service'
 
 const registry = {
 	strategy: 'CpuUsage',
@@ -16,7 +16,7 @@ const retryPolicy = {
 	delay: 100,
 	maxDelay: 2000,
 	factor: 2,
-	check: (err) => err && !!(err as any).retryable,
+	check: (err: any) => err && !!(err as any).retryable,
 }
 
 const broker = new ServiceBroker({
