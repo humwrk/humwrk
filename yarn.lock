@@ -464,7 +464,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@humwrk/db-mixin@workspace:packages/db-mixin":
+"@humwrk/db-mixin@^0.0.2, @humwrk/db-mixin@workspace:packages/db-mixin":
   version: 0.0.0-use.local
   resolution: "@humwrk/db-mixin@workspace:packages/db-mixin"
   dependencies:
@@ -532,6 +532,7 @@ __metadata:
   resolution: "@humwrk/products@workspace:services/products"
   dependencies:
     "@araclx/tsconfig": ^0.0.11
+    "@humwrk/db-mixin": ^0.0.2
     moleculer: ^0.14.10
     moleculer-db: ^0.8.9
     moleculer-db-adapter-mongo: ^0.4.9
