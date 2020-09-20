@@ -3,27 +3,8 @@
 	"compilerOptions": {
 		"target": "ES2018",
 		"lib": ["ES2018"],
-		"noUnusedParameters": false,
-		"noUnusedLocals": false,
-		"noImplicitAny": false,
-		"module": "commonjs",
-		"moduleResolution": "node",
-		"resolveJsonModule": true,
-		"allowSyntheticDefaultImports": true,
-		"esModuleInterop": true,
-		"jsx": "react",
-		"declaration": false,
-		"pretty": true,
-		"newLine": "lf",
-		"stripInternal": true,
-		"strict": true,
-		"noImplicitReturns": true,
-		"noFallthroughCasesInSwitch": true,
-		"noEmitOnError": true,
-		"forceConsistentCasingInFileNames": true,
-		"skipLibCheck": true,
-		"allowJs": true,
 		"baseUrl": ".",
+		"module": "commonjs",
 		"outDir": "dist"
 	}
 }
