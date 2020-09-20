@@ -33,6 +33,13 @@ And then you can simplify run development environment designed by us in single c
 $ yarn run dev
 ```
 
+If you really don't want to use `skaffold` for development, you can use local enviroment but that's strongly not recommended since we're not willing to support
+local development.
+
+```bash
+$ yarn run dev:local
+```
+
 ## Contributing
 
 The main purpose of this repository is to continue to evolve advanced boilerplate of new applications, making it faster and easier to use. Development of Humwrk
