@@ -2,29 +2,25 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: web-gateway
-  name: web-gateway
+    app: products
+  name: products
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: web-gateway
+      app: products
   template:
     metadata:
       labels:
-        app: web-gateway
+        app: products
     spec:
       containers:
-        - name: web-gateway
-          image: humwrk/web-gateway
+        - name: products
+          image: humwrk/products
           env:
             - name: PORT
               value: "80"
-            - name: REQUESTS_PER_MINUTE
-              value: "100"
-          ports:
-            - containerPort: 80
           resources:
             requests:
               cpu: 40m

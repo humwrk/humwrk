@@ -1,5 +1,5 @@
 import { ServiceBroker } from 'moleculer'
-import Service from './gateway.service'
+import Service from './products.service'
 
 const registry = {
 	strategy: 'CpuUsage',
@@ -27,10 +27,10 @@ const broker = new ServiceBroker({
 		type: 'Memory',
 		options: {
 			ttl: 3600,
-			prefix: 'WEB-G-MOL',
+			prefix: 'CLIENTS-MOL',
 			redis: {
-				host: process.env.REDIS_HOST!, // || 'redis',
-				port: process.env.REDIS_PORT!, // || 6379,
+				host: process.env.REDIS_HOST,
+				port: process.env.REDIS_PORT,
 			},
 		},
 	},

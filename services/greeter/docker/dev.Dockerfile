@@ -1,6 +1,6 @@
 FROM node:latest
 
-WORKDIR /opt/service/web-gateway
+WORKDIR /opt/service/greeter
 COPY package.json yarn.lock* ./
 
 RUN yarn

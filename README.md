@@ -16,7 +16,7 @@ common questions, actually questions can be made out on [Slack](https://join.sla
 Project currently is in early stage and scripts may be not up to date since there we're chaning a lot of things, but in general according to our plans for this
 repository you need 4 things.
 
--  Prefferable **yarn**, but **npm** is also fine - that makes no difference to our solution.
+-  **yarn@2.x**, we don't support `npm` since it's like using Internet Explorer.
 -  **[Skaffold](https://skaffold.dev/)** to handle CI/CD Pipeline
 -  **Docker** for containers of course
 -  **kubectl** for kubernetes obivo

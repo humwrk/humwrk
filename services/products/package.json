@@ -1,0 +1,27 @@
+{
+	"name": "@humwrk/products",
+	"version": "0.0.1",
+	"description": "Sample service that represents connection with database.",
+	"main": "dist/index.ts",
+	"author": "Jakub Olan <jakub.olan001@gmail.com>",
+	"license": "MIT",
+	"private": true,
+	"scripts": {
+		"build": "tsc",
+		"dev": "tsnd --respawn --clear --transpile-only --inspect -- src/index.ts",
+		"start": "node dist/index.js"
+	},
+	"devDependencies": {
+		"@araclx/tsconfig": "^0.0.11",
+		"ts-node": "^9.0.0",
+		"ts-node-dev": "^1.0.0-pre.62",
+		"typescript": "^4.0.2"
+	},
+	"dependencies": {
+		"moleculer": "^0.14.10",
+		"moleculer-db": "^0.8.9",
+		"moleculer-db-adapter-mongo": "^0.4.9",
+		"moleculer-db-adapter-mongoose": "^0.8.7",
+		"mongoose": "^5.10.6"
+	}
+}

@@ -1,4 +1,5 @@
 import { IncomingMessage } from 'http'
+import path from 'path'
 import { Service, ServiceBroker, Context } from 'moleculer'
 import ApiGateway from 'moleculer-web'
 
@@ -9,7 +10,7 @@ export default class ApiService extends Service {
 		super(broker)
 		// @ts-ignore
 		this.parseServiceSchema({
-			name: 'api',
+			name: 'web-gateway',
 			mixins: [ApiGateway],
 			// More info about settings: https://moleculer.services/docs/0.14/moleculer-web.html
 			settings: {
@@ -68,7 +69,7 @@ export default class ApiService extends Service {
 				// Logging the response data. Set to any log level to enable it. E.g. "info"
 				logResponseData: null,
 				assets: {
-					folder: 'public',
+					folder: path.join(__dirname, '..', 'public'),
 					options: {},
 				},
 			},

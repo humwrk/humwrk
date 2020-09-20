@@ -9,8 +9,8 @@ import { BrokerOptions, Errors, MetricRegistry, ServiceBroker } from 'moleculer'
  */
 
 const brokerConfig: BrokerOptions = {
-	namespace: 'project',
-	nodeID: 'server1',
+	namespace: 'main',
+	nodeID: 'eu-cluster',
 	// Custom metadata store. Store here what you want. Accessing: `this.broker.metadata`
 	metadata: {},
 
@@ -40,7 +40,7 @@ const brokerConfig: BrokerOptions = {
 
 	// Define a cacher.
 	// More info: https://moleculer.services/docs/0.14/caching.html
-	cacher: 'Redis',
+	cacher: 'Memory',
 
 	// Define a serializer.
 	// Available values: "JSON", "Avro", "ProtoBuf", "MsgPack", "Notepack", "Thrift".
