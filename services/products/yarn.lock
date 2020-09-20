@@ -12,24 +12,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@humwrk/db-mixin@npm:^0.0.2":
-  version: 0.0.2
-  resolution: "@humwrk/db-mixin@npm:0.0.2::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40humwrk%2Fdb-mixin%2F0.0.2%2Fbebb56b3063bab311d37e8e2cc6017baea158fe9ee051f52f88703865e6c92f6"
-  dependencies:
-    moleculer: ^0.14.10
-    moleculer-db: ^0.8.9
-    moleculer-db-adapter-mongo: ^0.4.9
-    moleculer-db-adapter-mongoose: ^0.8.7
-  checksum: d2b76476d530778a28a88cf0784914aa892bcb33cb204372b90c2215daf730b4207c47937f644a70150ebc621a8a4c526cf8074d04a53bd6536d6d52ef83701b
-  languageName: node
-  linkType: hard
-
 "@humwrk/products@workspace:.":
   version: 0.0.0-use.local
   resolution: "@humwrk/products@workspace:."
   dependencies:
     "@araclx/tsconfig": ^0.0.11
-    "@humwrk/db-mixin": ^0.0.2
     moleculer: ^0.14.10
     moleculer-db: ^0.8.9
     moleculer-db-adapter-mongo: ^0.4.9

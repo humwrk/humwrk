@@ -21,8 +21,6 @@ spec:
           env:
             - name: PORT
               value: "80"
-            - name: MONGO_URI
-              value: mongodb://cards-mongo-mongodb.default.svc.cluster.local:27017
           resources:
             requests:
               cpu: 40m
