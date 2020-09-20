@@ -25,7 +25,8 @@
 		"moleculer": "^0.14.10",
 		"moleculer-db": "^0.8.9",
 		"moleculer-db-adapter-mongo": "^0.4.9",
-		"moleculer-db-adapter-mongoose": "^0.8.7"
+		"moleculer-db-adapter-mongoose": "^0.8.7",
+		"mongoose": "^5.10.6"
 	},
 	"publishConfig": {
 		"registry": "https://npm.pkg.github.com/"
