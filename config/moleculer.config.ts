@@ -1,16 +1,11 @@
 'use strict'
 import { BrokerOptions, Errors, MetricRegistry, ServiceBroker } from 'moleculer'
 
-/**
- * Moleculer ServiceBroker configuration file
- *
- * More info about options:
- *     https://moleculer.services/docs/0.14/configuration.html
- */
+// Local-focused configuration of our solution.
 
 const brokerConfig: BrokerOptions = {
-	namespace: 'main',
-	nodeID: 'eu-cluster',
+	namespace: 'dev',
+	nodeID: 'dev-cluser',
 	// Custom metadata store. Store here what you want. Accessing: `this.broker.metadata`
 	metadata: {},
 
