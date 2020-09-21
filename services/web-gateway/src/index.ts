@@ -37,7 +37,9 @@ const broker = new ServiceBroker({
 	transporter: process.env.TRANSPORTER_URI,
 	circuitBreaker,
 	retryPolicy,
-	registry,
+	registry: {
+		discoverer: process.env.REDIS_URI,
+	},
 })
 
 new Service(broker)

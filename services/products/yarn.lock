@@ -18,6 +18,7 @@ __metadata:
   dependencies:
     "@araclx/tsconfig": ^0.0.11
     "@types/node": ^14.11.1
+    ioredis: ^4.17.3
     moleculer: ^0.14.10
     moleculer-db: ^0.8.9
     moleculer-db-adapter-mongo: ^0.4.9
@@ -339,6 +340,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cluster-key-slot@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "cluster-key-slot@npm:1.1.0"
+  checksum: 3b41b06942f6b0df71029dec9df6a272be2ab78353d60fcdc5a4af3b88a749d7fb2d1d3b092db0108b2bdd104086c03edcaa3b25ef432590bb954981d6cd7715
+  languageName: node
+  linkType: hard
+
 "code-point-at@npm:^1.0.0":
   version: 1.1.0
   resolution: "code-point-at@npm:1.1.0"
@@ -431,6 +439,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"debug@npm:^4.1.1":
+  version: 4.3.0
+  resolution: "debug@npm:4.3.0"
+  dependencies:
+    ms: 2.1.2
+  peerDependenciesMeta:
+    supports-color:
+      optional: true
+  checksum: 847d2760d1493cfaef53fb67d8943c6afaba30472d7527450c19919d230dde04f2275dd8dd5c2874c7103787c190d3b5d3dbc2ee7596a12d853a2ce35c4b8b1b
+  languageName: node
+  linkType: hard
+
 "decamelize@npm:^1.1.2":
   version: 1.2.0
   resolution: "decamelize@npm:1.2.0"
@@ -452,7 +472,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"denque@npm:^1.4.1":
+"denque@npm:^1.1.0, denque@npm:^1.4.1":
   version: 1.4.1
   resolution: "denque@npm:1.4.1"
   checksum: 174e81b3c9407b2149216d9e793fb91d901c19b1225dceefdafe32d5abeca243382ffee9bb111a1f60e42d2791b457d029bb57379d48404b2fb351bf700b6a8c
@@ -795,6 +815,23 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"ioredis@npm:^4.17.3":
+  version: 4.18.0
+  resolution: "ioredis@npm:4.18.0"
+  dependencies:
+    cluster-key-slot: ^1.1.0
+    debug: ^4.1.1
+    denque: ^1.1.0
+    lodash.defaults: ^4.2.0
+    lodash.flatten: ^4.4.0
+    redis-commands: 1.6.0
+    redis-errors: ^1.2.0
+    redis-parser: ^3.0.0
+    standard-as-callback: ^2.0.1
+  checksum: 92e2e05b38fb748f5c599cbe78f2629a21ca52ab57d19422d59b3bb9504052ec6416fc37315f51de6786e760ebdfd943585d494f2663aa8a27977821cf2086f9
+  languageName: node
+  linkType: hard
+
 "ipaddr.js@npm:^2.0.0":
   version: 2.0.0
   resolution: "ipaddr.js@npm:2.0.0"
@@ -981,6 +1018,20 @@ fsevents@~2.1.2:
   dependencies:
     lie: 3.1.1
   checksum: 0645f5ec6fe28799081a9a21dc23796fbb665dcc20e09061228302750a05671bd13a42688e41b523f1598fff5d8e219f468d826595b75db07b555d4ff223943e
+  languageName: node
+  linkType: hard
+
+"lodash.defaults@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "lodash.defaults@npm:4.2.0"
+  checksum: fde72e71f7b7ece10c24e43dd601574168467d50bc76687302d40de341d5cb8e35b100105d938458747d2ad5f20d8bb736e62523ef39d1a8b40f7307c50f10ac
+  languageName: node
+  linkType: hard
+
+"lodash.flatten@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "lodash.flatten@npm:4.4.0"
+  checksum: f22a7f6f163256d87345b07c76122e03d03abbf943b6c3aa5e5fafb7d5bce765013aedfc2aae7e649af0907287a2cf85de24237dbdd3ecd485a77d56e070b54c
   languageName: node
   linkType: hard
 
@@ -1567,6 +1618,29 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"redis-commands@npm:1.6.0":
+  version: 1.6.0
+  resolution: "redis-commands@npm:1.6.0"
+  checksum: 11ad01e57fab4927c7410817fcaaf71079d5b50ebb05f9b38ba5719b9461e7b78f7a3f1f8a6d352336a6af336ef4fdc9a21ff1abb5111890edb71d56634ff53f
+  languageName: node
+  linkType: hard
+
+"redis-errors@npm:^1.0.0, redis-errors@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "redis-errors@npm:1.2.0"
+  checksum: b260bb64a1c8523d32a56701681ac3e5cc6bb0a4eb09f1d30729ebba397021d274216ff189909c08fe3c6b706ec8b74948e20ea410b6f69d31b35bda3fb82a59
+  languageName: node
+  linkType: hard
+
+"redis-parser@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "redis-parser@npm:3.0.0"
+  dependencies:
+    redis-errors: ^1.0.0
+  checksum: 45dbcb05bed2c80a4aac288bbefed2347ecf3508c24d542ab42efa21fd63b5aaca4208b206f05818835a2ac43abe09250c2638c11c3b0b66a5d67e83985e350f
+  languageName: node
+  linkType: hard
+
 "regexp-clone@npm:1.0.0, regexp-clone@npm:^1.0.0":
   version: 1.0.0
   resolution: "regexp-clone@npm:1.0.0"
@@ -1811,6 +1885,13 @@ fsevents@~2.1.2:
     sshpk-sign: bin/sshpk-sign
     sshpk-verify: bin/sshpk-verify
   checksum: 4bd7422634ec3730404186179e5d9ba913accc64449f18d594b3a757a3b81000719adc94cf0c93a7b3da42487ae42404a1f37bfaa7908a60743d4478382b9d78
+  languageName: node
+  linkType: hard
+
+"standard-as-callback@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "standard-as-callback@npm:2.0.1"
+  checksum: 58a0ddb90d674f6af7e099c1fedd339276e98a218fd88f1a6134a4910c5ff8d272815cf8cc758b2d61fa3f523853c8fa6ef3cb0692912e7ff35870dedffa8ffc
   languageName: node
   linkType: hard
 

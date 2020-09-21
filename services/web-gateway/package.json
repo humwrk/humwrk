@@ -13,6 +13,7 @@
 	"dependencies": {
 		"compression": "^1.7.4",
 		"cookie-parser": "^1.4.5",
+		"ioredis": "^4.17.3",
 		"moleculer": "^0.14.10",
 		"moleculer-web": "^0.9.1",
 		"nats": "^1.4.12"
