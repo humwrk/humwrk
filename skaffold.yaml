@@ -19,6 +19,24 @@ build:
 deploy:
   kubectl:
     manifests:
+      # General Configuration File
+
+      - config/common-env.yaml
+
+      # Infrastructure Services
+
+      - infrastructure/mongodb/deploy.yaml
+      - infrastructure/mongodb/svc.yaml
+      - infrastructure/mongodb/volume.yaml
+
+      - infrastructure/nats/deploy.yaml
+      - infrastructure/nats/svc.yaml
+
+      - infrastructure/redis/deploy.yaml
+      - infrastructure/redis/svc.yaml
+
+      # Application Services
+
       - services/web-gateway/k8s/pod.yaml
       - services/web-gateway/k8s/svc.yaml
       - services/greeter/k8s/pod.yaml
