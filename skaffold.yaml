@@ -4,22 +4,12 @@ metadata:
   name: humwrk-services
 build:
   artifacts:
-    - image: humwrk/web-gateway
-      context: services/web-gateway
-      docker:
-        dockerfile: docker/dev.Dockerfile
-    - image: humwrk/greeter
-      context: services/greeter
-      docker:
-        dockerfile: docker/dev.Dockerfile
-    - image: humwrk/products
-      context: services/products
+    - image: humwrk/humwrk
+      context: services/humwrk
       docker:
         dockerfile: docker/dev.Dockerfile
 deploy:
   kubectl:
     manifests:
-      - services/web-gateway/k8s/pod.yaml
-      - services/web-gateway/k8s/svc.yaml
-      - services/greeter/k8s/pod.yaml
-      - services/products/k8s/pod.yaml
+      - k8s/pod.yaml
+      - k8s/svc.yaml
